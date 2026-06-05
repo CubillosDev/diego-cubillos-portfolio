@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diego Cubillos — Full Stack Developer</title>
   <meta name="description" content="Diego Armando Cubillos Clavijo — Desarrollador Full Stack. TypeScript, React, Node.js, NestJS, Flutter." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <meta name="theme-color" content="#16181d" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -47,6 +50,9 @@
           <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"></circle>
           <path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"></path>
         </svg>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menú">
+        <span></span><span></span><span></span>
       </button>
     </div>
   </header>
@@ -115,7 +121,7 @@
         <h2 class="big-title" data-i18n="contact.title">Contacto.</h2>
         <p class="contact-lead" id="contactLead"></p>
         <button class="email-pill" id="emailPill">
-          <span class="email-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cfa7a0a3ae8faba6aaa8a0acbaada6a3a3a0bce1aca0a2">[email&#160;protected]</a></span>
+          <span class="email-text"></span>
           <span class="email-copy" data-i18n="contact.copy">copiar</span>
         </button>
         <div class="socials" id="contactSocials"></div>
@@ -132,8 +138,9 @@
       <span data-i18n="drawer.back">Volver a proyectos</span>
     </button>
     <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-foot" id="drawerFoot"></div>
   </aside>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

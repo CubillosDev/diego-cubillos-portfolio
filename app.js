@@ -10,28 +10,25 @@ const ICONS = {
   globe: '<svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'
 };
 
+const EMAIL = ['hola', 'diegocubillos.com'].join('@');
 const SOCIALS = [
   { icon: 'github', url: 'https://github.com/CubillosDev', label: 'GitHub' },
   { icon: 'linkedin', url: 'https://linkedin.com/in/cubillosdiego', label: 'LinkedIn' },
-  { icon: 'mail', url: 'mailto:hola@diegocubillos.com', label: 'Email' },
+  { icon: 'mail', url: 'mailto:' + EMAIL, label: 'Email' },
   { icon: 'globe', url: 'https://diegocubillos.com', label: 'Web' }
 ];
 
 const STACK = ['TypeScript', 'React 19', 'Node.js', 'NestJS', 'Express', 'Flutter', 'PostgreSQL', 'TypeORM', 'Tailwind', 'Framer Motion', 'Jest', 'Git', 'Linux'];
 
 /* ---------- Projects ---------- */
-const COVERS = {
-  fleet: 'linear-gradient(135deg, oklch(0.62 0.16 200), oklch(0.55 0.18 268))',
-  hosp: 'linear-gradient(135deg, oklch(0.6 0.16 150), oklch(0.5 0.16 210))',
-  faq: 'linear-gradient(135deg, oklch(0.58 0.18 296), oklch(0.55 0.16 330))',
-  cms: 'linear-gradient(135deg, oklch(0.64 0.15 60), oklch(0.58 0.17 24))'
-};
+const LATAM_SHOTS = Array.from({ length: 10 }, (_, i) => `assets/proj/latam-${i + 1}.png`);
 
 const PROJECTS = [
   {
-    id: 'fleet', cover: COVERS.fleet, cat: 'fullstack', mono: 'Plataforma empresarial',
+    id: 'fleet', cat: 'fullstack', mono: 'Plataforma empresarial', type: 'web',
+    img: 'assets/proj/fleet.png', shots: ['assets/proj/fleet.png'], accent: 'oklch(0.6 0.17 264)',
     tags: ['NestJS', 'React 19', 'Flutter', 'PostgreSQL'],
-    url: 'https://github.com/CubillosDev',
+    url: 'https://github.com/olarthedev/control-flotas',
     es: {
       title: 'Sistema de Control de Flotas',
       sub: 'Plataforma empresarial de extremo a extremo',
@@ -58,9 +55,10 @@ const PROJECTS = [
     }
   },
   {
-    id: 'hosp', cover: COVERS.hosp, cat: 'backend', mono: 'Microservicios',
+    id: 'hosp', cat: 'backend', mono: 'Microservicios', type: 'web',
+    img: 'assets/proj/hospital.png', shots: ['assets/proj/hospital.png'], accent: 'oklch(0.62 0.13 220)',
     tags: ['Express.js', 'Sequelize', 'PostgreSQL', 'API Gateway'],
-    url: 'https://github.com/CubillosDev',
+    url: 'https://github.com/oscarjulian01/control-equipos-hospital',
     es: {
       title: 'Gestión de Equipos Hospitalarios',
       sub: 'Arquitectura de microservicios',
@@ -87,7 +85,8 @@ const PROJECTS = [
     }
   },
   {
-    id: 'faq', cover: COVERS.faq, cat: 'opensource', mono: 'Cloud platform',
+    id: 'faq', cat: 'opensource', mono: 'Cloud platform', type: 'web',
+    img: 'assets/proj/faq.png', shots: ['assets/proj/faq.png'], accent: 'oklch(0.72 0.14 85)',
     tags: ['JavaScript', 'Cloud', 'NLP'],
     url: 'https://github.com/CubillosDev/everwood-faq-cloud-platform',
     es: {
@@ -114,7 +113,8 @@ const PROJECTS = [
     }
   },
   {
-    id: 'cms', cover: COVERS.cms, cat: 'fullstack', mono: 'CMS · Flutter',
+    id: 'cms', cat: 'fullstack', mono: 'CMS · Flutter', type: 'mobile',
+    img: 'assets/proj/latam-hero.png', shots: LATAM_SHOTS, accent: 'oklch(0.55 0.2 300)',
     tags: ['Dart', 'Flutter', 'CMS'],
     url: 'https://github.com/CubillosDev/latam-comparte-cms',
     es: {
@@ -159,7 +159,7 @@ const I18N = {
     'contact.copy': 'copiar', 'contact.copied': 'copiado ✓',
     'contact.loc': 'Tunja, Boyacá · Colombia',
     'drawer.back': 'Volver a proyectos', 'drawer.about': 'Sobre el proyecto', 'drawer.high': 'Lo más destacado',
-    'drawer.tech': 'Tecnologías', 'drawer.open': 'Ver en GitHub',
+    'drawer.tech': 'Tecnologías', 'drawer.open': 'Ver en GitHub', 'drawer.screens': 'Pantallas',
     'about.rows': [
       { h: 'Backend & Arquitectura', link: 'Ver GitHub', url: 'https://github.com/CubillosDev',
         text: 'Diseño APIs y sistemas que escalan. He construido arquitecturas de microservicios con API Gateway, módulos de geolocalización en tiempo real con NestJS y suites de pruebas automatizadas con Jest y Supertest. Trabajo con controllers, services, guards y DTOs, junto a validación y autenticación segura, para mantener una base de código limpia y mantenible.' },
@@ -185,7 +185,7 @@ const I18N = {
     'contact.copy': 'copy', 'contact.copied': 'copied ✓',
     'contact.loc': 'Tunja, Boyacá · Colombia',
     'drawer.back': 'Back to projects', 'drawer.about': 'About the project', 'drawer.high': 'Highlights',
-    'drawer.tech': 'Technologies', 'drawer.open': 'View on GitHub',
+    'drawer.tech': 'Technologies', 'drawer.open': 'View on GitHub', 'drawer.screens': 'Screens',
     'about.rows': [
       { h: 'Backend & Architecture', link: 'View GitHub', url: 'https://github.com/CubillosDev',
         text: 'I design APIs and systems that scale. I have built microservices architectures with an API Gateway, real-time geolocation modules with NestJS and automated test suites with Jest and Supertest. I work with controllers, services, guards and DTOs, plus validation and secure authentication, to keep a clean, maintainable codebase.' },
@@ -249,8 +249,9 @@ function renderProjects() {
   grid.innerHTML = list.map(p => {
     const d = p[lang];
     return `<article class="pcard" data-id="${p.id}">
-      <div class="pcard-cover" style="background:${p.cover}"><span class="cover-mono">${p.mono}</span></div>
+      <div class="pcard-cover ${p.type}" style="--pa:${p.accent}"><img src="${p.img}" alt="${d.title}" loading="lazy"></div>
       <div class="pcard-body">
+        <span class="pcard-kicker">${p.mono}</span>
         <h3>${d.title}</h3>
         <p>${d.desc}</p>
         <div class="ptags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
@@ -264,25 +265,39 @@ function openDrawer(id) {
   const p = PROJECTS.find(x => x.id === id);
   if (!p) return;
   const d = p[lang], t = I18N[lang];
+  const screens = p.type === 'mobile'
+    ? `<h4>${t['drawer.screens']}</h4>
+      <div class="d-shots" style="--pa:${p.accent}">
+        <div class="d-gallery mobile">${p.shots.map(s => `<img src="${s}" alt="" loading="lazy" draggable="false">`).join('')}</div>
+        <button class="g-nav prev" aria-label="Anterior"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15,5 8,12 15,19"></polyline></svg></button>
+        <button class="g-nav next" aria-label="Siguiente"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,5 16,12 9,19"></polyline></svg></button>
+      </div>`
+    : '';
   $('#drawerBody').innerHTML = `
-    <h2>${d.title}</h2>
-    <p class="d-sub">${d.sub}</p>
-    <div class="drawer-cover" style="background:${p.cover}"></div>
-    <h4>${t['drawer.about']}</h4>
-    <p class="d-about">${d.about}</p>
-    <h4>${t['drawer.high']}</h4>
-    <ul class="d-bullets">${d.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
-    <h4>${t['drawer.tech']}</h4>
-    <div class="ptags">${p.tags.map(x => `<span>${x}</span>`).join('')}</div>
-    <a class="drawer-link" href="${p.url}" target="_blank" rel="noopener">${t['drawer.open']} ${ICONS.github}</a>
+    <div class="d-hero"><img src="${p.img}" alt="${d.title}"></div>
+    <div class="d-pad">
+      <span class="d-kicker">${p.mono}</span>
+      <h2>${d.title}</h2>
+      <p class="d-sub">${d.sub}</p>
+      <h4>${t['drawer.about']}</h4>
+      <p class="d-about">${d.about}</p>
+      <h4>${t['drawer.high']}</h4>
+      <ul class="d-bullets">${d.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+      ${screens}
+      <h4>${t['drawer.tech']}</h4>
+      <div class="ptags">${p.tags.map(x => `<span>${x}</span>`).join('')}</div>
+    </div>
   `;
+  $('#drawerFoot').innerHTML = `<a class="drawer-link" href="${p.url}" target="_blank" rel="noopener"><span>${t['drawer.open']}</span> ${ICONS.github}</a>`;
   $('#drawerBody').scrollTop = 0;
   $('#drawer').classList.add('open');
   $('#drawerOverlay').classList.add('open');
+  document.body.classList.add('no-scroll');
 }
 function closeDrawer() {
   $('#drawer').classList.remove('open');
   $('#drawerOverlay').classList.remove('open');
+  document.body.classList.remove('no-scroll');
 }
 
 /* ---------- i18n apply ---------- */
@@ -308,10 +323,11 @@ function applyI18n() {
 function setView(next) {
   if (next === view) return;
   view = next;
-  if (location.hash !== '#' + next) history.replaceState(null, '', next === 'home' ? location.pathname : '#' + next);
   $$('.view').forEach(v => v.classList.toggle('is-active', v.id === next));
   $$('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('data-view') === next));
   $$('.view-scroll').forEach(v => { if (v.id === next) v.scrollTop = 0; });
+  document.querySelector('.nav').classList.remove('open');
+  document.body.classList.remove('no-scroll');
 }
 
 /* ---------- Theme & lang ---------- */
@@ -354,20 +370,25 @@ function initEvents() {
     if (card) { openDrawer(card.getAttribute('data-id')); return; }
     const fbtn = e.target.closest('[data-filter]');
     if (fbtn) { filter = fbtn.getAttribute('data-filter'); renderFilters(); renderProjects(); return; }
+    const gnav = e.target.closest('.g-nav');
+    if (gnav) {
+      const gal = gnav.closest('.d-shots').querySelector('.d-gallery');
+      const item = gal.querySelector('img');
+      const step = item ? item.offsetWidth + 16 : 300;
+      gal.scrollBy({ left: gnav.classList.contains('next') ? step : -step, behavior: 'smooth' });
+      return;
+    }
   });
 
   $('#langBtn').addEventListener('click', toggleLang);
   $('#themeBtn').addEventListener('click', toggleTheme);
+  $('#menuBtn').addEventListener('click', () => document.querySelector('.nav').classList.toggle('open'));
   $('#drawerClose').addEventListener('click', closeDrawer);
   $('#drawerOverlay').addEventListener('click', closeDrawer);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-  window.addEventListener('hashchange', () => {
-    const v = (location.hash || '').replace('#', '') || 'home';
-    if (['home', 'about', 'projects', 'contact'].includes(v)) setView(v);
-  });
 
   $('#emailPill').addEventListener('click', () => {
-    navigator.clipboard?.writeText('hola@diegocubillos.com');
+    navigator.clipboard?.writeText(EMAIL);
     const pill = $('#emailPill');
     pill.classList.add('copied');
     $('.email-copy').textContent = I18N[lang]['contact.copied'];
@@ -380,11 +401,9 @@ function init() {
   applyTheme();
   renderSocials($('#homeSocials'));
   renderSocials($('#contactSocials'));
+  const et = $('.email-text'); if (et) et.textContent = EMAIL;
   applyI18n();
   initEvents();
   initMouse();
-  const start = (location.hash || '').replace('#', '') || document.body.dataset.start;
-  if (['about', 'projects', 'contact'].includes(start)) setView(start);
-  if (document.body.dataset.forceTheme) { theme = document.body.dataset.forceTheme; applyTheme(); }
 }
 init();
