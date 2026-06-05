@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diego Cubillos</title>
+</head>
+<body>
+  <script>
+    const view = location.pathname.replace(/^\/|\/$/g, '');
+    const validViews = ['about', 'projects', 'contact'];
+    location.replace(validViews.includes(view) ? `/?view=${view}` : '/');
+  </script>
+</body>
+</html>

@@ -11,6 +11,13 @@ const ICONS = {
 };
 
 const EMAIL = ['hola', 'diegocubillos.com'].join('@');
+const ROUTES = {
+  home: '/',
+  about: '/about',
+  projects: '/projects',
+  contact: '/contact'
+};
+const ROUTE_VIEWS = Object.fromEntries(Object.entries(ROUTES).map(([view, path]) => [path, view]));
 const SOCIALS = [
   { icon: 'github', url: 'https://github.com/CubillosDev', label: 'GitHub' },
   { icon: 'linkedin', url: 'https://linkedin.com/in/cubillosdiego', label: 'LinkedIn' },
@@ -320,7 +327,20 @@ function applyI18n() {
 }
 
 /* ---------- View switching ---------- */
-function setView(next) {
+function getInitialView() {
+  const redirected = new URLSearchParams(location.search).get('view');
+  const path = location.pathname.replace(/\/$/, '') || '/';
+  return ROUTE_VIEWS['/' + redirected] || ROUTE_VIEWS[path] || 'home';
+}
+
+function setView(next, opts = {}) {
+  if (!ROUTES[next]) next = 'home';
+  const shouldUpdateUrl = opts.updateUrl !== false;
+  const route = ROUTES[next];
+  if (shouldUpdateUrl && location.pathname !== route) {
+    const method = opts.replace ? 'replaceState' : 'pushState';
+    history[method]({ view: next }, '', route);
+  }
   if (next === view) return;
   view = next;
   $$('.view').forEach(v => v.classList.toggle('is-active', v.id === next));
@@ -386,6 +406,7 @@ function initEvents() {
   $('#drawerClose').addEventListener('click', closeDrawer);
   $('#drawerOverlay').addEventListener('click', closeDrawer);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+  window.addEventListener('popstate', () => setView(getInitialView(), { updateUrl: false }));
 
   $('#emailPill').addEventListener('click', () => {
     navigator.clipboard?.writeText(EMAIL);
@@ -403,6 +424,7 @@ function init() {
   renderSocials($('#contactSocials'));
   const et = $('.email-text'); if (et) et.textContent = EMAIL;
   applyI18n();
+  setView(getInitialView(), { replace: true });
   initEvents();
   initMouse();
 }
