@@ -461,6 +461,7 @@ body.no-scroll .view-scroll { overflow: hidden; }
   .view-scroll { padding: 100px 22px 70px; }
   .home-inner, .hero-body, .name-stage { max-width: 100%; }
   .hero-name { font-size: clamp(1.65rem, 8.5vw, 2.5rem); }
+  .ghost { font-size: clamp(1.65rem, 8.5vw, 2.5rem); }
   .hero-body p { font-size: 1rem; }
   .big-title { font-size: clamp(2.1rem, 10vw, 3rem); }
   .initials { font-size: 86vw; bottom: -3vw; }
