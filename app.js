@@ -28,12 +28,12 @@ const SOCIALS = [
 const STACK = ['TypeScript', 'React 19', 'Node.js', 'NestJS', 'Express', 'Flutter', 'PostgreSQL', 'TypeORM', 'Tailwind', 'Framer Motion', 'Jest', 'Git', 'Linux'];
 
 /* ---------- Projects ---------- */
-const LATAM_SHOTS = Array.from({ length: 10 }, (_, i) => `assets/proj/latam-${i + 1}.png`);
+const LATAM_SHOTS = Array.from({ length: 10 }, (_, i) => `assets/proj/latam-${i + 1}.webp`);
 
 const PROJECTS = [
   {
     id: 'fleet', cat: 'fullstack', mono: 'Plataforma empresarial', type: 'web',
-    img: 'assets/proj/fleet.png', shots: ['assets/proj/fleet.png'], accent: 'oklch(0.6 0.17 264)',
+    img: 'assets/proj/fleet.webp', shots: ['assets/proj/fleet.webp'], accent: 'oklch(0.6 0.17 264)',
     tags: ['NestJS', 'React 19', 'Flutter', 'PostgreSQL'],
     url: 'https://github.com/olarthedev/control-flotas',
     es: {
@@ -63,7 +63,7 @@ const PROJECTS = [
   },
   {
     id: 'hosp', cat: 'backend', mono: 'Microservicios', type: 'web',
-    img: 'assets/proj/hospital.png', shots: ['assets/proj/hospital.png'], accent: 'oklch(0.62 0.13 220)',
+    img: 'assets/proj/hospital.webp', shots: ['assets/proj/hospital.webp'], accent: 'oklch(0.62 0.13 220)',
     tags: ['Express.js', 'Sequelize', 'PostgreSQL', 'API Gateway'],
     url: 'https://github.com/oscarjulian01/control-equipos-hospital',
     es: {
@@ -93,7 +93,7 @@ const PROJECTS = [
   },
   {
     id: 'faq', cat: 'opensource', mono: 'Cloud platform', type: 'web',
-    img: 'assets/proj/faq.png', shots: ['assets/proj/faq.png'], accent: 'oklch(0.72 0.14 85)',
+    img: 'assets/proj/faq.webp', shots: ['assets/proj/faq.webp'], accent: 'oklch(0.72 0.14 85)',
     tags: ['JavaScript', 'Cloud', 'NLP'],
     url: 'https://github.com/CubillosDev/everwood-faq-cloud-platform',
     es: {
@@ -121,7 +121,7 @@ const PROJECTS = [
   },
   {
     id: 'cms', cat: 'fullstack', mono: 'CMS · Flutter', type: 'mobile',
-    img: 'assets/proj/latam-hero.png', shots: LATAM_SHOTS, accent: 'oklch(0.55 0.2 300)',
+    img: 'assets/proj/latam-hero.webp', shots: LATAM_SHOTS, accent: 'oklch(0.55 0.2 300)',
     tags: ['Dart', 'Flutter', 'CMS'],
     url: 'https://github.com/CubillosDev/latam-comparte-cms',
     es: {
