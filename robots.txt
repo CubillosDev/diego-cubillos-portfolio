@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://diegocubillos.com/sitemap.xml
+Sitemap: https://www.diegocubillos.com/sitemap.xml
